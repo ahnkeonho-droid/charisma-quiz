@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#FFFDF0">
+    <meta name="description" content="Discover your social personality and find your Charisma Archetype with this interactive 21-question personality quiz.">
+
+    <title>Find Your Charisma Type ✨</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app-container">
+
+        <!-- LANDING SCREEN -->
+
+        <section id="landing-screen" class="screen landing-screen">
+
+            <div class="top-label">
+                <span class="sparkle">✦</span>
+                PERSONALITY & SOCIAL STYLE QUIZ
+                <span class="sparkle">✦</span>
+            </div>
+
+            <div class="hero-content">
+
+                <div class="hero-icon">✨</div>
+
+                <h1>
+                    Find Your
+                    <span class="highlight-text">Charisma Type.</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    Everyone has a different kind of presence.
+                    Discover yours through 21 questions about your
+                    personality, social behavior, and the way you
+                    connect with people.
+                </p>
+
+                <button id="start-button" class="primary-button">
+                    Discover Your Style
+                    <span aria-hidden="true">→</span>
+                </button>
+
+                <p class="quiz-meta">
+                    <span>✦ 21 Questions</span>
+                    <span>✦ 6 Archetypes</span>
+                    <span>✦ About 5 Minutes</span>
+                </p>
+
+            </div>
+
+            <div class="info-grid">
+
+                <article class="info-card">
+                    <div class="info-icon">💡</div>
+                    <h2>What is a Charisma Style?</h2>
+                    <p>
+                        Charisma is the way your personality makes
+                        an impression on others. It can appear through
+                        your humor, energy, confidence, warmth,
+                        expressiveness, or quiet intensity.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <div class="info-icon">🌻</div>
+                    <h2>Why Does Knowing It Matter?</h2>
+                    <p>
+                        Understanding your social style can help
+                        you recognize your strengths, communicate
+                        more confidently, and appreciate the unique
+                        qualities you bring into a room.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <div class="info-icon">🪞</div>
+                    <h2>How Does It Work?</h2>
+                    <p>
+                        Answer 21 everyday social situations based
+                        on what you would naturally do. Your answers
+                        will determine which of six charisma
+                        archetypes best matches your responses.
+                    </p>
+                </article>
+
+            </div>
+
+            <p class="disclaimer">
+                This is an entertainment and self-reflection quiz,
+                not a scientifically validated personality assessment.
+            </p>
+
+        </section>
+
+
+        <!-- QUIZ SCREEN -->
+
+        <section id="quiz-screen" class="screen quiz-screen hidden">
+
+            <div class="quiz-header">
+
+                <button id="exit-button" class="text-button" type="button">
+                    ← Exit Quiz
+                </button>
+
+                <span class="quiz-brand">FIND YOUR CHARISMA ✦</span>
+
+            </div>
+
+            <div class="progress-section">
+
+                <div class="progress-information">
+                    <span id="question-counter">Question 1 of 21</span>
+                    <span id="progress-percentage">5%</span>
+                </div>
+
+                <div
+                    class="progress-track"
+                    role="progressbar"
+                    aria-label="Quiz progress"
+                    aria-valuemin="0"
+                    aria-valuemax="21"
+                    aria-valuenow="0"
+                    id="progress-container"
+                >
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+
+            </div>
+
+            <div class="question-card">
+
+                <div class="question-category">
+                    GET TO KNOW YOURSELF
+                </div>
+
+                <h2 id="question-text" class="question-text">
+                    Loading question...
+                </h2>
+
+                <p class="question-instruction">
+                    Choose the answer that feels most natural to you.
+                </p>
+
+                <div
+                    id="answer-container"
+                    class="answer-container"
+                ></div>
+
+                <div class="quiz-footer">
+                    <span>There are no wrong answers.</span>
+                    <span>Be yourself ✨</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULTS SCREEN -->
+
+        <section id="results-screen" class="screen results-screen hidden">
+
+            <div class="results-top-label">
+                ✦ YOUR CHARISMA REVEAL ✦
+            </div>
+
+            <div class="result-card">
+
+                <div class="result-emoji" id="result-emoji">
+                    🐬
+                </div>
+
+                <p class="result-eyebrow">
+                    YOUR CHARISMA ARCHETYPE IS
+                </p>
+
+                <h1 id="result-title">
+                    Bubbly Bright
+                </h1>
+
+                <p id="result-tagline" class="result-tagline">
+                    Radiant, uplifting, approachable.
+                </p>
+
+                <div class="result-divider"></div>
+
+                <div class="result-description">
+                    <h2>Your Personality</h2>
+
+                    <p id="result-description">
+                        Your personality summary will appear here.
+                    </p>
+                </div>
+
+                <div class="traits-container">
+                    <h3>Your Signature Traits</h3>
+                    <div id="result-traits" class="traits-list"></div>
+                </div>
+
+                <!-- CELEBRITY TWINS -->
+
+                <div class="celebrity-banner">
+
+                    <div class="celebrity-banner-label">
+                        ✨ YOUR CELEBRITY ARCHETYPE TWINS
+                    </div>
+
+                    <div id="celebrity-names" class="celebrity-names">
+                        Elle Woods · Tom Holland
+                    </div>
+
+                    <p class="celebrity-note">
+                        These celebrities are illustrative
+                        personality comparisons, not verified
+                        assessments of their private personalities.
+                    </p>
+
+                </div>
+
+                <div class="result-bottom-note">
+                    <span>✦</span>
+                    Own your presence. Embrace your personality.
+                    <span>✦</span>
+                </div>
+
+            </div>
+
+
+            <!-- SOCIAL SHARING -->
+
+            <div class="share-container">
+
+                <h2>Share Your Results</h2>
+
+                <p>
+                    Let your friends discover their charisma type too!
+                </p>
+
+                <div class="share-buttons">
+
+                    <button
+                        id="share-x"
+                        class="share-button share-x"
+                        type="button"
+                    >
+                        <span class="share-icon">𝕏</span>
+                        Share on X (Twitter)
+                    </button>
+
+                    <button
+                        id="share-whatsapp"
+                        class="share-button share-whatsapp"
+                        type="button"
+                    >
+                        <span class="share-icon">◉</span>
+                        Share on WhatsApp
+                    </button>
+
+                    <button
+                        id="copy-link"
+                        class="share-button share-copy"
+                        type="button"
+                    >
+                        <span class="share-icon">🔗</span>
+                        Copy Link
+                    </button>
+
+                </div>
+
+                <p
+                    id="share-feedback"
+                    class="share-feedback"
+                    aria-live="polite"
+                ></p>
+
+            </div>
+
+            <button
+                id="restart-button"
+                class="primary-button restart-button"
+                type="button"
+            >
+                ↻ Take Quiz Again
+            </button>
+
+            <p class="disclaimer result-disclaimer">
+                Your result represents your answers in this quiz.
+                People are complex, and no single archetype defines
+                your entire personality.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        Made with ☀️ and a little bit of personality.
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+  </html>
